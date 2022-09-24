@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   addContact(ListTile newname) {
+    //setState 함수를 작성하여 메인 화면에 contact 추가
     setState(() {
       contacts.add(newname);
     });
@@ -76,6 +77,7 @@ class inputDialog extends StatelessWidget {
     required this.addcon, //중괄호 안에 넣어주었기 때문에 위에서 'count: 00'
   });
 
+  //부모한테 state 설정권한을 주어야함
   final addcon;
   final controller1 = TextEditingController();
 
@@ -96,6 +98,7 @@ class inputDialog extends StatelessWidget {
             TextButton(
               onPressed: () {
                 addcon(ListTile(
+                  //여기서 함수 사용함!
                   leading: FlutterLogo(),
                   title: Text(controller1.text),
                 ));
@@ -109,7 +112,3 @@ class inputDialog extends StatelessWidget {
     ));
   }
 }
-
-
-
-//부모한테 state 설정권한을 주어야함
